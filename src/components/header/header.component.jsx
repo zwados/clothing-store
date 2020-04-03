@@ -22,19 +22,18 @@ const Header = ({currentUser}) => {
                 Contact
             </Link>
             {
-                currentUser ?
-                <div className='option' onClick={() => auth.signOut()}>Sign Out</div> 
+                currentUser ? (<div className='option' onClick={() => auth.signOut()}>Sign Out</div>) 
                 :
-                <Link className="signin" to="/signin">
+                (<Link className="signin" to="/signin">
                 Sign In
-                </Link>
+                </Link>)
             }
         </div>
     </div> );
 }
 
 const mapStateToProps = (state) => ({
-    currentUSer: state.user.currentUser
+    currentUser: state.user.currentUser
 })
  
 export default connect(mapStateToProps)(Header);
